@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Invitación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+        /* Fondo general blanco */
+        body { margin: 0; padding: 0; font-family: 'Cinzel', serif; background-color: #fff; }
+        img { width: 100%; display: block; }
+        
+        /* Espacio blanco entre secciones */
+        .espacio-blanco { height: 10px; background-color: #fff; }
+        
+        .section-container { position: relative; width: 100%; }
+        
+        .btn-ubicacion {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #6B764C;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            min-width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        .btn-container-ext {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .btn-confirmar {
+            display: inline-block;
+            background-color: #6B764C;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 18px;
+            min-width: 250px;
+        }
+
+        .slider-container { 
+            position: relative; 
+            width: 100%; 
+            overflow: hidden; 
+            background: #fff;
+        }
+        .slider-container img {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            opacity: 0; 
+            transition: opacity 1s ease-in-out;
+        }
+        .slider-container img.active { position: relative; opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <img src="portada.jpg" alt="Portada">
+    <div class="espacio-blanco"></div>
+    <img src="oracion.jpg" alt="Oración">
+
+    <div class="section-container">
+        <img src="ceremonia.jpg" alt="Ceremonia">
+        <a href="https://www.google.com/maps/place/Tizate+Sea+Garden/@20.755375,-105.3704433,15z/data=!4m15!1m8!3m7!1s0x842141843848881d:0xceb115f9117dbb0f!2sTizate+Sea+Garden!8m2!3d20.7554698!4d-105.3707493!10e5!16s%2Fg%2F11fmv9r6gn!3m5!1s0x842141843848881d:0xceb115f9117dbb0f!8m2!3d20.7554698!4d-105.3707493!16s%2Fg%2F11fmv9r6gn?hl=es_419&entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" 
+           class="btn-ubicacion" target="_blank">VER UBICACIÓN</a>
+    </div>
+
+    <div class="slider-container">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298292/WhatsApp_Image_2025-08-25_at_5.14.00_PM_5_zninrn.jpg" class="active" alt="Foto 1">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298282/WhatsApp_Image_2025-08-25_at_5.14.00_PM_4_etip7r.jpg" alt="Foto 2">
+        <img src="https://res.cloudinary.com/gghygmrq/image/upload/v1784298272/WhatsApp_Image_2025-08-25_at_5.14.00_PM_3_mj65my.jpg" alt="Foto 3">
+    </div>
+
+    <img src="regalos.jpg" alt="Regalos">
+    <img src="vestimenta.jpg" alt="Vestimenta">
+    <img src="confirmacion.jpg" alt="Confirmación">
+    
+    <div class="btn-container-ext">
+        <a href="https://wa.link/ik5r5d" class="btn-confirmar" target="_blank">DA CLICK</a>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.slider-container img');
+        let current = 0;
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 2000);
+    </script>
+</body>
+</html>
